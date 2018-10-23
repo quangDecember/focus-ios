@@ -42,6 +42,8 @@ class UserAgent {
         let currentFocusBuild = AppInfo.buildNumber
         let lastFocusBuild = userDefaults.string(forKey: "LastFocusBuildNumber")
 
+        return UserAgent.generateUserAgent()
+        /*
         if let focusUA = userDefaults.string(forKey: "UserAgent") {
             if (lastiOSVersion == currentiOSVersion
                 && lastFocusVersion == currentFocusVersion
@@ -50,6 +52,7 @@ class UserAgent {
             }
         }
         return nil
+ */
     }
 
     private static func generateUserAgent() -> String? {
@@ -78,16 +81,18 @@ class UserAgent {
         }
 
         let mutableUA = NSMutableString(string: userAgent)
-        mutableUA.insert("FocusiOS/\(AppInfo.shortVersion) ", at: mobileRange.location)
+        mutableUA.insert("FxiOS/\(AppInfo.shortVersion) ", at: mobileRange.location)
 
-        let focusUA = "\(mutableUA) Safari/\(webKitVersion)"
-
+        let focusUA = "\(mutableUA)"
+        
+        print("userAgent: \(focusUA)")
         return focusUA
     }
     
     public static func getDesktopUserAgent() -> String {
         // TODO: check if this is suffficient. Chose this user agent instead of Firefox's method as Firefox fails to load desktop on several sites (i.e. Facebook)
-        let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/605.1.12 (KHTML, like Gecko) Version/11.1 Safari/605.1.12"
+        
+        let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/605.1.12 (KHTML, like Gecko) Version/11.1"
         return String(userAgent)
     }
 
