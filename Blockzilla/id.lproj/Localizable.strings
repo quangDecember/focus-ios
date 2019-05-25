@@ -43,6 +43,9 @@
 /* Label on About screen */
 "About.topLabel" = "%@ menempatkan Anda dalam kontrol.";
 
+/* %@ is app name. Prompt shown to ask the user to use Touch ID, Face ID, or passcode to continue browsing after returning to the app. */
+"Authentication.reason" = "Otentikasi untuk kembali ke %@";
+
 /* Label for button to add a custom URL */
 "Autocomplete.addCustomUrl" = "Tambah URL Ubahsuai";
 
@@ -85,11 +88,26 @@
 /* label describing URL Autocomplete as disabled */
 "Autocomplete.disabled" = "Dinonaktifkan";
 
+/* Label for toast alerting that the custom URL being added is a duplicate */
+"Autocomplete.duplicateUrl" = "URL telah digunakan";
+
 /* Label for button to add a custom URL */
 "Autocomplete.emptyState" = "Tidak ada URL Ubahsuai untuk ditampilkan";
 
 /* label describing URL Autocomplete as enabled */
 "Autocomplete.enabled" = "Diaktifkan";
+
+/* Label for button taking you to your custom Autocomplete URL list */
+"Autocomplete.manageSites" = "Kelola Situs";
+
+/* Label for enabling or disabling autocomplete */
+"Autocomplete.mySites" = "Situs Saya";
+
+/* Description for adding and managing custom autocomplete URLs. The placeholder is replaced with the application name, which can be either Firefox Focus or Firefox Klar. */
+"Autocomplete.mySitesDesc" = "Aktifkan %@ melengkapi otomatis URL favorit Anda.";
+
+/* Label for enabling or disabling top sites */
+"Autocomplete.topSites" = "Situs Teratas";
 
 /* Create a new session after failing a biometric check */
 "BiometricPrompt.newSession" = "Sesi Baru";
@@ -99,6 +117,9 @@
 
 /* Accessibility label for the back button */
 "Browser.backLabel" = "Kembali";
+
+/* Copy URL button in URL long press menu */
+"Browser.copyAddressLabel" = "Salin Alamat";
 
 /* Copy URL button in URL long press menu */
 "Browser.copyMenuLabel" = "Salin";
@@ -190,6 +211,9 @@
 /* Second label for product description on the home screen */
 "Home.descriptionLabel2" = "Jelajahi. Hapus. Ulangi.";
 
+/* Button label used to close a menu that displays as a popup. */
+"Menu.Close" = "Tutup";
+
 /* Label in share alert to cancel the alert */
 "Open.Cancel" = "Batalkan";
 
@@ -219,6 +243,21 @@
 
 /* Save button label */
 "Save" = "Simpan";
+
+/* Label for error state when entering an invalid search engine URL. %s is a search term in a URL. */
+"SearchEngine.addEngineError" = "Tidak dapat digunakan. Coba ganti istilah pencarian dengan ini: %s.";
+
+/* Label for disable option on search suggestions prompt */
+"SearchSuggestions.promptDisable" = "Tidak";
+
+/* Label for enable option on search suggestions prompt */
+"SearchSuggestions.promptEnable" = "Ya";
+
+/* %@ is the name of the app (Focus / Klar). Label for search suggestions prompt message */
+"SearchSuggestions.promptMessage" = "Untuk mendapatkan saran, %@ perlu mengirim apa yang Anda ketikkan di bilah alamat ke mesin pencari.";
+
+/* Title for search suggestions prompt */
+"SearchSuggestions.promptTitle" = "Tampilkan Saran Pencarian?";
 
 /* Text for button to add another search engine in settings */
 "Settings.Search.AddSearchEngineButton" = "Tambahkan Mesin Pencari Lainnya";
@@ -262,6 +301,9 @@
 /* Button label for accepting Content blocker alert */
 "Settings.blockOtherYes" = "Paham";
 
+/* Description associated to the Search Suggestions toggle on main screen. %@ is the app name (Focus/Klar) */
+"Settings.detailTextSearchSuggestion" = "%@ akan mengirim apa yang Anda ketikkan di bilah alamat ke mesin pencari Anda.";
+
 /* Description associated to the Send Usage Data toggle on main screen. %@ is the app name (Focus/Klar) */
 "Settings.detailTextSendUsageData" = "Mozilla berusaha untuk mengumpulkan hanya apa yang kami perlu untuk menghadirkan dan meningkatkan %@ untuk setiap orang.";
 
@@ -271,11 +313,17 @@
 /* %@ is the name of the app (Focus / Klar). Title displayed in the settings screen that, when tapped, allows the user to leave a review for the app on the app store. */
 "Settings.rate" = "Beri nilai %@";
 
+/* Label for Safari integration section */
+"Settings.safariTitle" = "INTEGRASI SAFARI";
+
 /* Title for settings screen */
 "Settings.screenTitle" = "Pengaturan";
 
 /* Label for the search engine in the search screen */
 "Settings.searchLabel" = "Mesin Pencari";
+
+/* Label for the Search Suggestions toggle row */
+"Settings.searchSuggestions" = "Dapatkan Saran Pencarian";
 
 /* Title for the search selection screen */
 "Settings.searchTitle2" = "CARI";
@@ -328,6 +376,9 @@
 /* %@ is the name of the app (Focus / Klar). Description for 'Enable Face ID' displayed under its respective toggle in the settings menu. */
 "Settings.toggleFaceIDDescription" = "Face ID dapat membuka %@ jika URL telah terbuka di aplikasi";
 
+/* Show home screen tips toggle label on settings screen */
+"Settings.toggleHomeScreenTips" = "Tampilkan kiat beranda";
+
 /* Label subtitle for toggle on main screen */
 "Settings.toggleOtherSubtitle" = "Mungkin menghentikan beberapa video dan laman Web";
 
@@ -343,8 +394,14 @@
 /* %@ is the name of the app (Focus / Klar). Description for 'Enable Touch ID' displayed under its respective toggle in the settings menu. */
 "Settings.toggleTouchIDDescription" = "Touch ID dapat membuka %@ jika URL telah terbuka di aplikasi";
 
+/* URL for the learn more of the send usage data toggle */
+"Settings.usageData" = "data penggunaan";
+
 /* Title for What's new screen */
 "Settings.whatsNewTitle" = "Yang Baru";
+
+/* Title for settings section to enable different Siri Shortcuts. */
+"Settinsg.siriShortcutsTitle" = "PINTASAN SIRI";
 
 /* Text for the share menu option when a user wants to open the find in page menu */
 "ShareMenu.FindInPage" = "Temukan di Laman";
@@ -355,8 +412,53 @@
 /* Text for the share menu option when a user wants to open a page in Focus. */
 "ShareMenu.OpenInFocus" = "Buka di %@";
 
+/* Title for the share menu where users can take actions for the current website they are on. */
+"ShareMenu.PageActions" = "Aksi Laman";
+
 /* Text for the share menu option when a user wants to reload the site as a desktop */
 "ShareMenu.RequestDesktop" = "Minta Situs Desktop";
+
+/* Text for the share menu option when a user wants to reload the site as a mobile device */
+"ShareMenu.RequestMobile" = "Meminta Situs Seluler";
+
+/* Text for the share menu option when a user wants to open the current website in the Chrome app. */
+"ShareMenu.ShareOpenChrome" = "Buka di Chrome";
+
+/* Text for the share menu option when a user wants to open the current website in the Firefox app. */
+"ShareMenu.ShareOpenFirefox" = "Buka di Firefox";
+
+/* Text for the share menu option when a user wants to open the current website in the Safari app. */
+"ShareMenu.ShareOpenSafari" = "Buka di Safari";
+
+/* Text for the share menu option when a user wants to share the current website they are on through another app. */
+"ShareMenu.SharePage" = "Bagikan Laman Dengan...";
+
+/* Button to add a favorite URL to Siri. */
+"Siri.add" = "Tambah";
+
+/* Button to add a specified shortcut option to Siri. */
+"Siri.addTo" = "Tambahkan ke Safari";
+
+/* Label for button to edit the Siri phrase or delete the Siri functionality. */
+"Siri.editOpenUrl" = "Rekam Ulang atau Hapus Pintasan";
+
+/* Title of option in settings to set up Siri to erase */
+"Siri.erase" = "Hapus";
+
+/* Title of option in settings to set up Siri to erase and then open the app. */
+"Siri.eraseAndOpen" = "Hapus & Buka";
+
+/* Title for screen to add a favorite URL to Siri. */
+"Siri.favoriteUrl" = "Buka Situs Favorit";
+
+/* Title of option in settings to set up Siri to open a specified URL in Focus/Klar. */
+"Siri.openURL" = "Buka Situs Favorit";
+
+/* Label for input to set a favorite URL to be opened by Siri. */
+"Siri.urlToOpen" = "URL untuk dibuka";
+
+/* Label displayed for button used as a shortcut to add a link to the list of URLs to autocomplete. */
+"URL.addToAutocompleteLabel" = "Tambahkan tautan untuk dilengkapi secara otomatis";
 
 /* Label for cancel button shown when entering a URL or search */
 "URL.cancelLabel" = "Batal";
@@ -373,6 +475,9 @@
 /* Label displayed for find in page button when typing in the URL Bar. %@ is any text the user has typed into the URL bar that they want to find on the current page. */
 "URL.findOnPageLabel" = "Temukan di laman: %@";
 
+/* Text for a menu displayed from the bottom of the screen when a user long presses on the URL bar with clipboard contents. */
+"URL.paste" = "Tempel";
+
 /* Placeholder text shown in the URL bar before the user navigates to a page */
 "URL.placeholderText" = "Cari atau masukkan alamat";
 
@@ -385,6 +490,9 @@
 /* Title for action sheet item to open the current page in another application. Placeholder is the name of the application to open the current page. */
 "actionSheet.openIn" = "Buka di %@";
 
+/* Toast displayed after a URL has been copied to the clipboard */
+"browser.copyAddressToast" = "URL Disalin ke Papan Klip";
+
 /* Label to display in the Discoverability overlay for keyboard shortcuts */
 "browserShortcutDescription.selectLocationBar" = "Pilih Bilah Lokasi";
 
@@ -396,6 +504,9 @@
 
 /* Text for the context menu when a user wants to copy a link after long pressing it. */
 "contextMenu.copyLink" = "Salin Tautan";
+
+/* Text for the context menu when a user has a link on their clipboard. */
+"contextMenu.linkCopied" = "Tautan yang Anda salin:";
 
 /* Text for the context menu when a user wants to save an image after long pressing it. */
 "contextMenu.saveImageTitle" = "Simpan Gambar";
@@ -421,6 +532,9 @@
 /* Text for a share button */
 "share" = "Bagikan";
 
+/* Text for the share menu when a user wants to copy a URL. */
+"shareMenu.copyAddress" = "Salin Alamat";
+
 /* %@ is app name. Prompt shown to ask the user to use Touch ID to continue browsing after returning to the app. */
 "touchId.reason" = "Gunakan Touch ID untuk kembali ke %@";
 
@@ -435,6 +549,12 @@
 
 /* text showing the tracking protection is disabled. */
 "trackingProtection.disabledLabel" = "Perlindungan Pelacakan nonaktif";
+
+/* Title for the tracking settings page to change what trackers are blocked. */
+"trackingProtection.label" = "Perlindungan Pelacakan";
+
+/* Description/subtitle for the tracking protection label. */
+"trackingProtection.labelDescription" = "Menonaktifkan ini mungkin membantu memecahkan masalah beberapa situs";
 
 /* Text for the button to learn more about Tracking Protection. */
 "trackingProtection.learnMore" = "Pelajari Lebih Lanjut";

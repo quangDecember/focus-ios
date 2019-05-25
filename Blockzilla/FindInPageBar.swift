@@ -22,10 +22,10 @@ private struct FindInPageUX {
 
 class FindInPageBar: UIView {
     weak var delegate: FindInPageBarDelegate?
-    fileprivate let searchText = UITextField()
-    fileprivate let matchCountView = UILabel()
-    fileprivate let previousButton = UIButton()
-    fileprivate let nextButton = UIButton()
+    private let searchText = UITextField()
+    private let matchCountView = UILabel()
+    private let previousButton = UIButton()
+    private let nextButton = UIButton()
 
     var currentResult = 0 {
         didSet {
@@ -111,7 +111,7 @@ class FindInPageBar: UIView {
         addSubview(topBorder)
 
         searchText.snp.makeConstraints { make in
-            make.leading.top.bottom.equalTo(self).inset(UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0))
+            make.leading.top.bottom.equalTo(self).inset(UIConstants.layout.findInPageSearchTextInsets)
         }
         searchText.setContentHuggingPriority(.defaultLow, for: .horizontal)
         searchText.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
@@ -124,7 +124,7 @@ class FindInPageBar: UIView {
         matchCountView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
 
         previousButton.snp.makeConstraints { make in
-            make.leading.equalTo(matchCountView.snp.trailing).offset(16)
+            make.leading.equalTo(matchCountView.snp.trailing).offset(UIConstants.layout.findInPagePreviousButtonOffset)
             make.size.equalTo(self.snp.height)
             make.centerY.equalTo(self)
         }
@@ -156,20 +156,20 @@ class FindInPageBar: UIView {
         return super.becomeFirstResponder()
     }
 
-    @objc fileprivate func didFindPrevious(_ sender: UIButton) {
+    @objc private func didFindPrevious(_ sender: UIButton) {
         delegate?.findInPage(self, didFindPreviousWithText: searchText.text ?? "")
     }
 
-    @objc fileprivate func didFindNext(_ sender: UIButton) {
+    @objc private func didFindNext(_ sender: UIButton) {
         delegate?.findInPage(self, didFindNextWithText: searchText.text ?? "")
     }
 
-    @objc fileprivate func didTextChange(_ sender: UITextField) {
+    @objc private func didTextChange(_ sender: UITextField) {
         matchCountView.isHidden = searchText.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true
         delegate?.findInPage(self, didTextChange: searchText.text ?? "")
     }
 
-    @objc fileprivate func didPressClose(_ sender: UIButton) {
+    @objc private func didPressClose(_ sender: UIButton) {
         delegate?.findInPageDidPressClose(self)
     }
 }

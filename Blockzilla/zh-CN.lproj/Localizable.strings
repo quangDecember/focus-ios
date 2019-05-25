@@ -88,17 +88,32 @@
 /* label describing URL Autocomplete as disabled */
 "Autocomplete.disabled" = "已禁用";
 
+/* Label for toast alerting that the custom URL being added is a duplicate */
+"Autocomplete.duplicateUrl" = "网址已存在";
+
 /* Label for button to add a custom URL */
 "Autocomplete.emptyState" = "没有自定义网址";
 
 /* label describing URL Autocomplete as enabled */
 "Autocomplete.enabled" = "已启用";
 
+/* Label for button taking you to your custom Autocomplete URL list */
+"Autocomplete.manageSites" = "管理网站";
+
+/* Label for enabling or disabling autocomplete */
+"Autocomplete.mySites" = "我的网站";
+
+/* Description for adding and managing custom autocomplete URLs. The placeholder is replaced with the application name, which can be either Firefox Focus or Firefox Klar. */
+"Autocomplete.mySitesDesc" = "开启之后，%@ 可以自动补全您喜爱的网址。";
+
+/* Label for enabling or disabling top sites */
+"Autocomplete.topSites" = "常用网站";
+
 /* Create a new session after failing a biometric check */
 "BiometricPrompt.newSession" = "新会话";
 
 /* %@ is app name. Explanation for why the app needs access to biometric information. Prompt is only shown once when the user first tries to enable Face ID to open the app. */
-"BiometricPrompt.reason" = "重新打开时要求解锁 ％@，以防止未经您允许的使用。";
+"BiometricPrompt.reason" = "重新打开时要求解锁 %@，以防止未经您允许的使用。";
 
 /* Accessibility label for the back button */
 "Browser.backLabel" = "后退";
@@ -232,6 +247,18 @@
 /* Label for error state when entering an invalid search engine URL. %s is a search term in a URL. */
 "SearchEngine.addEngineError" = "网址无效。尝试用这个替换搜索关键词：%s。";
 
+/* Label for disable option on search suggestions prompt */
+"SearchSuggestions.promptDisable" = "否";
+
+/* Label for enable option on search suggestions prompt */
+"SearchSuggestions.promptEnable" = "是";
+
+/* %@ is the name of the app (Focus / Klar). Label for search suggestions prompt message */
+"SearchSuggestions.promptMessage" = "为获取建议，%@ 需将您在地址栏中输入的内容发送至搜索引擎。";
+
+/* Title for search suggestions prompt */
+"SearchSuggestions.promptTitle" = "要显示搜索建议吗？";
+
 /* Text for button to add another search engine in settings */
 "Settings.Search.AddSearchEngineButton" = "添加其他搜索引擎";
 
@@ -274,6 +301,9 @@
 /* Button label for accepting Content blocker alert */
 "Settings.blockOtherYes" = "知道了";
 
+/* Description associated to the Search Suggestions toggle on main screen. %@ is the app name (Focus/Klar) */
+"Settings.detailTextSearchSuggestion" = "%@ 会将您在地址栏中输入的内容发送至您的搜索引擎。";
+
 /* Description associated to the Send Usage Data toggle on main screen. %@ is the app name (Focus/Klar) */
 "Settings.detailTextSendUsageData" = "Mozilla 坚持仅收集用来为大众改进 %@ 所必需的数据。";
 
@@ -291,6 +321,9 @@
 
 /* Label for the search engine in the search screen */
 "Settings.searchLabel" = "搜索引擎";
+
+/* Label for the Search Suggestions toggle row */
+"Settings.searchSuggestions" = "获取搜索建议";
 
 /* Title for the search selection screen */
 "Settings.searchTitle2" = "搜索";
@@ -341,7 +374,10 @@
 "Settings.toggleFaceID" = "使用面容 ID 解锁应用";
 
 /* %@ is the name of the app (Focus / Klar). Description for 'Enable Face ID' displayed under its respective toggle in the settings menu. */
-"Settings.toggleFaceIDDescription" = "如果网址已在应用中打开，则可用面容 ID 解锁 %@";
+"Settings.toggleFaceIDDescription" = "如果已有网址在应用中打开，则可用面容 ID 解锁 %@";
+
+/* Show home screen tips toggle label on settings screen */
+"Settings.toggleHomeScreenTips" = "显示主屏幕提示";
 
 /* Label subtitle for toggle on main screen */
 "Settings.toggleOtherSubtitle" = "可能对某些网页与视频有影响";
@@ -356,13 +392,16 @@
 "Settings.toggleTouchID" = "使用触控 ID 解锁应用";
 
 /* %@ is the name of the app (Focus / Klar). Description for 'Enable Touch ID' displayed under its respective toggle in the settings menu. */
-"Settings.toggleTouchIDDescription" = "如果网址已在应用中打开，则可用触控 ID 解锁 ％@";
+"Settings.toggleTouchIDDescription" = "如果已有网址在应用中打开，则可用触控 ID 解锁 %@";
+
+/* URL for the learn more of the send usage data toggle */
+"Settings.usageData" = "使用统计";
 
 /* Title for What's new screen */
 "Settings.whatsNewTitle" = "新版变化";
 
 /* Title for settings section to enable different Siri Shortcuts. */
-"Settinsg.siriShortcutsTitle" = "Siri 快捷方式";
+"Settinsg.siriShortcutsTitle" = "Siri 捷径";
 
 /* Text for the share menu option when a user wants to open the find in page menu */
 "ShareMenu.FindInPage" = "在页面中查找";
@@ -378,6 +417,9 @@
 
 /* Text for the share menu option when a user wants to reload the site as a desktop */
 "ShareMenu.RequestDesktop" = "要求桌面版网站";
+
+/* Text for the share menu option when a user wants to reload the site as a mobile device */
+"ShareMenu.RequestMobile" = "请求移动版网站";
 
 /* Text for the share menu option when a user wants to open the current website in the Chrome app. */
 "ShareMenu.ShareOpenChrome" = "在 Chrome 中打开";
@@ -398,7 +440,7 @@
 "Siri.addTo" = "添加到 Siri";
 
 /* Label for button to edit the Siri phrase or delete the Siri functionality. */
-"Siri.editOpenUrl" = "重新录音或删除快捷方式";
+"Siri.editOpenUrl" = "重新录制或删除捷径";
 
 /* Title of option in settings to set up Siri to erase */
 "Siri.erase" = "清除";
@@ -414,6 +456,9 @@
 
 /* Label for input to set a favorite URL to be opened by Siri. */
 "Siri.urlToOpen" = "要打开的网址";
+
+/* Label displayed for button used as a shortcut to add a link to the list of URLs to autocomplete. */
+"URL.addToAutocompleteLabel" = "添加自动补全的链接";
 
 /* Label for cancel button shown when entering a URL or search */
 "URL.cancelLabel" = "取消";
@@ -507,6 +552,9 @@
 
 /* Title for the tracking settings page to change what trackers are blocked. */
 "trackingProtection.label" = "跟踪保护";
+
+/* Description/subtitle for the tracking protection label. */
+"trackingProtection.labelDescription" = "关闭此功能或许可以解决一些网站的问题";
 
 /* Text for the button to learn more about Tracking Protection. */
 "trackingProtection.learnMore" = "详细了解";

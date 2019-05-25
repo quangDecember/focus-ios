@@ -19,15 +19,22 @@ class HomeView: UIView {
     private let tipTitleLabel = SmartLabel()
     private let tipDescriptionLabel = SmartLabel()
     private let shieldLogo = UIImageView()
-    
+    private let textLogo = UIImageView()
+
     let toolbar = HomeViewToolbar()
     let trackerStatsShareButton = UIButton()
-    
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     init(tipManager: TipManager? = nil) {
         super.init(frame: CGRect.zero)
-        
+        rotated()
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeView.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
+
         let wordmark = AppInfo.config.wordmark
-        let textLogo = UIImageView(image: wordmark)
+        textLogo.image = wordmark
         addSubview(textLogo)
 
         privateBrowsingDescription.textColor = .white
@@ -43,18 +50,18 @@ class HomeView: UIView {
         browseEraseRepeatTagline.text = UIConstants.strings.homeLabel2
         browseEraseRepeatTagline.numberOfLines = 0
         addSubview(browseEraseRepeatTagline)
-        
+
         addSubview(toolbar)
-        
+
         addSubview(tipView)
         tipView.isHidden = true
-        
+
         tipTitleLabel.textColor = UIConstants.colors.defaultFont
         tipTitleLabel.font = UIConstants.fonts.shareTrackerStatsLabel
         tipTitleLabel.numberOfLines = 0
         tipTitleLabel.minimumScaleFactor = UIConstants.layout.homeViewLabelMinimumScale
         tipView.addSubview(tipTitleLabel)
-        
+
         tipDescriptionLabel.textColor = UIConstants.colors.defaultFont
         tipDescriptionLabel.font = UIConstants.fonts.shareTrackerStatsLabel
         tipDescriptionLabel.numberOfLines = 0
@@ -64,13 +71,13 @@ class HomeView: UIView {
         shieldLogo.image = #imageLiteral(resourceName: "tracking_protection")
         shieldLogo.tintColor = UIColor.white
         tipView.addSubview(shieldLogo)
-        
+
         trackerStatsLabel.font = UIConstants.fonts.shareTrackerStatsLabel
         trackerStatsLabel.textColor = UIConstants.colors.defaultFont
         trackerStatsLabel.numberOfLines = 0
         trackerStatsLabel.minimumScaleFactor = UIConstants.layout.homeViewLabelMinimumScale
         tipView.addSubview(trackerStatsLabel)
-        
+
         trackerStatsShareButton.setTitleColor(UIConstants.colors.defaultFont, for: .normal)
         trackerStatsShareButton.titleLabel?.font = UIConstants.fonts.shareTrackerStatsLabel
         trackerStatsShareButton.titleLabel?.textAlignment = .center
@@ -78,7 +85,7 @@ class HomeView: UIView {
         trackerStatsShareButton.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
         trackerStatsShareButton.titleLabel?.numberOfLines = 0
         trackerStatsShareButton.layer.borderColor = UIConstants.colors.defaultFont.cgColor
-        trackerStatsShareButton.layer.borderWidth = 1.0;
+        trackerStatsShareButton.layer.borderWidth = 1.0
         trackerStatsShareButton.layer.cornerRadius = 4
         tipView.addSubview(trackerStatsShareButton)
 
@@ -89,14 +96,14 @@ class HomeView: UIView {
 
         privateBrowsingDescription.snp.makeConstraints { make in
             make.leading.trailing.equalTo(self)
-            make.top.equalTo(textLogo.snp.bottom).offset(25)
+            make.top.equalTo(textLogo.snp.bottom).offset(UIConstants.layout.homePrivateBrowsingDescriptionLabelTopOffset)
         }
 
         browseEraseRepeatTagline.snp.makeConstraints { make in
             make.leading.trailing.equalTo(self)
-            make.top.equalTo(privateBrowsingDescription.snp.bottom).offset(UIConstants.layout.homeViewTextOffset)
+            make.top.equalTo(privateBrowsingDescription.snp.bottom)
         }
-        
+
         tipView.snp.makeConstraints { make in
             make.bottom.equalTo(toolbar.snp.top).offset(UIConstants.layout.shareTrackersBottomOffset)
             make.height.equalTo(UIConstants.layout.shareTrackersHeight)
@@ -104,22 +111,22 @@ class HomeView: UIView {
             make.width.greaterThanOrEqualTo(280)
             make.width.lessThanOrEqualToSuperview().offset(-32)
         }
-        
+
         tipDescriptionLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        
+
         tipTitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(tipDescriptionLabel.snp.top).offset(-UIConstants.layout.homeViewTextOffset)
+            make.bottom.equalTo(tipDescriptionLabel.snp.top).offset(UIConstants.layout.homeTipTitleLableOffset)
         }
-        
+
         toolbar.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
             make.width.equalToSuperview().priority(.required)
         }
-        
+
         trackerStatsShareButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
             make.right.equalToSuperview()
@@ -127,19 +134,19 @@ class HomeView: UIView {
             make.width.greaterThanOrEqualTo(50)
             make.height.equalToSuperview()
         }
-        
+
         trackerStatsLabel.snp.makeConstraints { make in
             make.centerY.equalTo(trackerStatsShareButton.snp.centerY)
             make.left.equalTo(shieldLogo.snp.right).offset(8)
             make.right.equalTo(trackerStatsShareButton.snp.left).offset(-13)
             make.height.equalToSuperview()
         }
-        
+
         shieldLogo.snp.makeConstraints { make in
             make.centerY.equalTo(trackerStatsShareButton.snp.centerY)
             make.left.equalToSuperview()
         }
-        
+
         if let tipManager = tipManager, let tip = tipManager.fetchTip() {
             showTipView()
             switch tip.identifier {
@@ -159,13 +166,13 @@ class HomeView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func showTipView() {
         privateBrowsingDescription.isHidden = true
         browseEraseRepeatTagline.isHidden = true
         tipView.isHidden = false
     }
-    
+
     func showTrackerStatsShareButton(text: String) {
         trackerStatsLabel.text = text
         trackerStatsLabel.sizeToFit()
@@ -173,13 +180,29 @@ class HomeView: UIView {
         trackerStatsShareButton.isHidden = false
         shieldLogo.isHidden = false
     }
-    
+
     func hideTrackerStatsShareButton() {
         shieldLogo.isHidden = true
         trackerStatsLabel.isHidden = true
         trackerStatsShareButton.isHidden = true
     }
-    
+
+    @objc private func rotated() {
+        if UIDevice.current.orientation.isLandscape {
+            hideTextLogo()
+        } else {
+            showTextLogo()
+        }
+    }
+
+    private func hideTextLogo() {
+        textLogo.isHidden = true
+    }
+
+    private func showTextLogo() {
+        textLogo.isHidden = false
+    }
+
     func showTextTip(_ tip: TipManager.Tip) {
         tipTitleLabel.text = tip.title
         tipTitleLabel.sizeToFit()
@@ -196,7 +219,7 @@ class HomeView: UIView {
         }
         tipDescriptionLabel.sizeToFit()
         tipDescriptionLabel.isHidden = false
-        
+
         switch tip.identifier {
         case TipManager.TipKey.autocompleteTip:
             Telemetry.default.recordEvent(category: TelemetryEventCategory.action, method: TelemetryEventMethod.show, object: TelemetryEventObject.autocompleteTip)
@@ -214,16 +237,16 @@ class HomeView: UIView {
             break
         }
     }
-    
+
     func hideTextTip() {
         tipTitleLabel.isHidden = true
         tipDescriptionLabel.isHidden = true
     }
-    
+
     @objc private func shareTapped() {
         delegate?.shareTrackerStatsButtonTapped()
     }
-    
+
     @objc private func tapTip() {
         delegate?.tipTapped()
     }

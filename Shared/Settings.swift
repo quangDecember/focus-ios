@@ -16,12 +16,13 @@ enum SettingsToggle: String {
     case sendAnonymousUsageData = "SendAnonymousUsageData"
     case enableDomainAutocomplete = "enableDomainAutocomplete"
     case enableCustomDomainAutocomplete = "enableCustomDomainAutocomplete"
+    case enableSearchSuggestions = "enableSearchSuggestions"
 }
 
 struct Settings {
-    fileprivate static let prefs = UserDefaults(suiteName: AppInfo.sharedContainerIdentifier)!
-    
-    fileprivate static let customDomainSettingKey = "customDomains"
+    private static let prefs = UserDefaults(suiteName: AppInfo.sharedContainerIdentifier)!
+
+    private static let customDomainSettingKey = "customDomains"
     private static let siriRequestsEraseKey = "siriRequestsErase"
 
     private static func defaultForToggle(_ toggle: SettingsToggle) -> Bool {
@@ -37,33 +38,31 @@ struct Settings {
         case .sendAnonymousUsageData: return AppInfo.isKlar ? false : true
         case .enableDomainAutocomplete: return true
         case .enableCustomDomainAutocomplete: return true
+        case .enableSearchSuggestions: return false
         }
     }
 
     static func getToggle(_ toggle: SettingsToggle) -> Bool {
         return prefs.object(forKey: toggle.rawValue) as? Bool ?? defaultForToggle(toggle)
     }
-    
+
     static func getCustomDomainSetting() -> [String] {
         return prefs.array(forKey: customDomainSettingKey) as? [String] ?? []
     }
-    
+
     static func setCustomDomainSetting(domains: [String]) {
         prefs.set(domains, forKey: customDomainSettingKey)
-        prefs.synchronize()
     }
 
     static func set(_ value: Bool, forToggle toggle: SettingsToggle) {
         prefs.set(value, forKey: toggle.rawValue)
-        prefs.synchronize()
     }
-    
+
     static func siriRequestsErase() -> Bool {
         return prefs.bool(forKey: siriRequestsEraseKey)
     }
-    
+
     static func setSiriRequestErase(to value: Bool) {
         prefs.set(value, forKey: siriRequestsEraseKey)
-        prefs.synchronize()
     }
 }

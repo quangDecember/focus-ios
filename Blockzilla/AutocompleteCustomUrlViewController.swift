@@ -34,7 +34,7 @@ class AutocompleteCustomUrlViewController: UIViewController {
 
         label.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(50)
+            make.top.equalToSuperview().offset(UIConstants.layout.AutocompleteCustomURLLabelOffset)
         }
 
         tableView.snp.makeConstraints { make in
@@ -49,7 +49,7 @@ class AutocompleteCustomUrlViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = UIConstants.colors.background
 
-        title = UIConstants.strings.autocompleteCustomSectionLabel
+        title = UIConstants.strings.autocompleteManageSitesLabel
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -66,20 +66,20 @@ class AutocompleteCustomUrlViewController: UIViewController {
 
     @objc private func toggleEditing() {
         navigationItem.rightBarButtonItem?.title = tableView.isEditing ? UIConstants.strings.edit : UIConstants.strings.done
-        
+
         tableView.setEditing(!tableView.isEditing, animated: true)
-        addDomainCell?.animateHidden(tableView.isEditing, duration: 0.2)
+        addDomainCell?.animateHidden(tableView.isEditing, duration: UIConstants.layout.autocompleteAnimationDuration)
         navigationItem.setHidesBackButton(tableView.isEditing, animated: true)
         updateEmptyStateView()
         navigationItem.rightBarButtonItem?.isEnabled = tableView.isEditing || domains.count > 0
     }
 
-    @objc fileprivate func updateEmptyStateView() {
+    @objc private func updateEmptyStateView() {
         if tableView.isEditing && domains.isEmpty {
-            tableView.backgroundView?.animateHidden(false, duration: 0.2)
+            tableView.backgroundView?.animateHidden(false, duration: UIConstants.layout.autocompleteAnimationDuration)
         } else {
             guard !tableView.backgroundView!.isHidden else { return }
-            tableView.backgroundView?.animateHidden(true, duration: 0.2)
+            tableView.backgroundView?.animateHidden(true, duration: UIConstants.layout.autocompleteAnimationDuration)
         }
     }
 }
@@ -101,7 +101,7 @@ extension AutocompleteCustomUrlViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell
-        if (indexPath.row == domains.count) {
+        if indexPath.row == domains.count {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "addCustomDomainCell")
             cell.textLabel?.text = UIConstants.strings.autocompleteAddCustomUrlWithPlus
             cell.accessoryType = .disclosureIndicator
@@ -150,7 +150,7 @@ extension AutocompleteCustomUrlViewController: UITableViewDataSource {
 
             // We need to wait till after the editing animation when swiping to delete
             // to make sure we're really not in editing mode
-            perform(#selector(updateEmptyStateView), with: nil, afterDelay: 0.5)
+            perform(#selector(updateEmptyStateView), with: nil, afterDelay: UIConstants.layout.autocompleteAfterDelayDuration)
         }
     }
 

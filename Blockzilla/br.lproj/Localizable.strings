@@ -43,6 +43,9 @@
 /* Label on About screen */
 "About.topLabel" = "Chom a rit mestr gant %@.";
 
+/* %@ is app name. Prompt shown to ask the user to use Touch ID, Face ID, or passcode to continue browsing after returning to the app. */
+"Authentication.reason" = "Dilesait da zistreiñ da %@";
+
 /* Label for button to add a custom URL */
 "Autocomplete.addCustomUrl" = "Ouzhpennañ un URL personelaet";
 
@@ -85,11 +88,26 @@
 /* label describing URL Autocomplete as disabled */
 "Autocomplete.disabled" = "Diweredekaet";
 
+/* Label for toast alerting that the custom URL being added is a duplicate */
+"Autocomplete.duplicateUrl" = "An URL a zo dioutañ endeo";
+
 /* Label for button to add a custom URL */
 "Autocomplete.emptyState" = "URL personelaet ebet da ziskouez";
 
 /* label describing URL Autocomplete as enabled */
 "Autocomplete.enabled" = "Gweredekaet";
+
+/* Label for button taking you to your custom Autocomplete URL list */
+"Autocomplete.manageSites" = "Merañ lec'hiennoù";
+
+/* Label for enabling or disabling autocomplete */
+"Autocomplete.mySites" = "Ma lec'hiennoù";
+
+/* Description for adding and managing custom autocomplete URLs. The placeholder is replaced with the application name, which can be either Firefox Focus or Firefox Klar. */
+"Autocomplete.mySitesDesc" = "Gweredekait evit ma vefe leuniet ent emgefreek hoc'h URLoù gwellañ deoc'h gant %@";
+
+/* Label for enabling or disabling top sites */
+"Autocomplete.topSites" = "Lec'hiennoù gwellañ";
 
 /* Create a new session after failing a biometric check */
 "BiometricPrompt.newSession" = "Estez nevez";
@@ -99,6 +117,9 @@
 
 /* Accessibility label for the back button */
 "Browser.backLabel" = "Distreiñ";
+
+/* Copy URL button in URL long press menu */
+"Browser.copyAddressLabel" = "Eilañ ar chomlec'h";
 
 /* Copy URL button in URL long press menu */
 "Browser.copyMenuLabel" = "Eilañ";
@@ -190,6 +211,9 @@
 /* Second label for product description on the home screen */
 "Home.descriptionLabel2" = "Merdeit. Diverkit. Adkrogit.";
 
+/* Button label used to close a menu that displays as a popup. */
+"Menu.Close" = "Serriñ";
+
 /* Label in share alert to cancel the alert */
 "Open.Cancel" = "Nullañ";
 
@@ -219,6 +243,21 @@
 
 /* Save button label */
 "Save" = "Enrollañ";
+
+/* Label for error state when entering an invalid search engine URL. %s is a search term in a URL. */
+"SearchEngine.addEngineError" = "N'eo ket aet en-dro. Klaskit amsaviñ an termenoù klasket gant se: %s.";
+
+/* Label for disable option on search suggestions prompt */
+"SearchSuggestions.promptDisable" = "Ket";
+
+/* Label for enable option on search suggestions prompt */
+"SearchSuggestions.promptEnable" = "Ya";
+
+/* %@ is the name of the app (Focus / Klar). Label for search suggestions prompt message */
+"SearchSuggestions.promptMessage" = "Evit kaout alioù en deus ezhomm %@ da gas ar pezh a viziatait er varrenn glask d'al lusker klask.";
+
+/* Title for search suggestions prompt */
+"SearchSuggestions.promptTitle" = "Diskouez an alioù klask?";
 
 /* Text for button to add another search engine in settings */
 "Settings.Search.AddSearchEngineButton" = "Ouzhpennañ ur c'heflusker enklask all";
@@ -262,6 +301,9 @@
 /* Button label for accepting Content blocker alert */
 "Settings.blockOtherYes" = "Komprenet am eus";
 
+/* Description associated to the Search Suggestions toggle on main screen. %@ is the app name (Focus/Klar) */
+"Settings.detailTextSearchSuggestion" = "%@ a gaso ar pezh a vizskrivit er varrenn chomlec'hioù d'ho lusker enklask.";
+
 /* Description associated to the Send Usage Data toggle on main screen. %@ is the app name (Focus/Klar) */
 "Settings.detailTextSendUsageData" = "Strivañ a ra Mozilla evit dastum ar pezh hon eus ezhomm hepken evit gwellaat ha kinnig %@ d'an holl.";
 
@@ -271,11 +313,17 @@
 /* %@ is the name of the app (Focus / Klar). Title displayed in the settings screen that, when tapped, allows the user to leave a review for the app on the app store. */
 "Settings.rate" = "Feur %@";
 
+/* Label for Safari integration section */
+"Settings.safariTitle" = "ENKORFADUR SAFARI";
+
 /* Title for settings screen */
 "Settings.screenTitle" = "Arventennoù";
 
 /* Label for the search engine in the search screen */
 "Settings.searchLabel" = "Keflusker enklask";
+
+/* Label for the Search Suggestions toggle row */
+"Settings.searchSuggestions" = "Kaout alioù klask";
 
 /* Title for the search selection screen */
 "Settings.searchTitle2" = "KLASK";
@@ -328,6 +376,9 @@
 /* %@ is the name of the app (Focus / Klar). Description for 'Enable Face ID' displayed under its respective toggle in the settings menu. */
 "Settings.toggleFaceIDDescription" = "Face ID a c'hall dibrennañ %@ m'eo digoret un URL en arload endeo";
 
+/* Show home screen tips toggle label on settings screen */
+"Settings.toggleHomeScreenTips" = "Diskouez tunioù pennbajenn";
+
 /* Label subtitle for toggle on main screen */
 "Settings.toggleOtherSubtitle" = "Gallout a ra mirout videoioù ha pajennadoù web da vont en-dro en un doare dereat";
 
@@ -343,8 +394,14 @@
 /* %@ is the name of the app (Focus / Klar). Description for 'Enable Touch ID' displayed under its respective toggle in the settings menu. */
 "Settings.toggleTouchIDDescription" = "Touch ID a c'hall dibrennañ %@ m'eo digoret un URL en arload endeo";
 
+/* URL for the learn more of the send usage data toggle */
+"Settings.usageData" = "usage-data";
+
 /* Title for What's new screen */
 "Settings.whatsNewTitle" = "Petra nevez";
+
+/* Title for settings section to enable different Siri Shortcuts. */
+"Settinsg.siriShortcutsTitle" = "BERRADENNOÙ SIRI";
 
 /* Text for the share menu option when a user wants to open the find in page menu */
 "ShareMenu.FindInPage" = "Kavout er bajennad";
@@ -355,8 +412,53 @@
 /* Text for the share menu option when a user wants to open a page in Focus. */
 "ShareMenu.OpenInFocus" = "Digeriñ e %@";
 
+/* Title for the share menu where users can take actions for the current website they are on. */
+"ShareMenu.PageActions" = "Obererezhioù ar bajenn";
+
 /* Text for the share menu option when a user wants to reload the site as a desktop */
 "ShareMenu.RequestDesktop" = "Goulenn al lec'hienn evit an urzhiataerioù";
+
+/* Text for the share menu option when a user wants to reload the site as a mobile device */
+"ShareMenu.RequestMobile" = "Lec'hienn hezoug";
+
+/* Text for the share menu option when a user wants to open the current website in the Chrome app. */
+"ShareMenu.ShareOpenChrome" = "Digeriñ e Chrome";
+
+/* Text for the share menu option when a user wants to open the current website in the Firefox app. */
+"ShareMenu.ShareOpenFirefox" = "Digeriñ e Firefox";
+
+/* Text for the share menu option when a user wants to open the current website in the Safari app. */
+"ShareMenu.ShareOpenSafari" = "Digeriñ e Safari";
+
+/* Text for the share menu option when a user wants to share the current website they are on through another app. */
+"ShareMenu.SharePage" = "Rannañ ar bajenn gant...";
+
+/* Button to add a favorite URL to Siri. */
+"Siri.add" = "Bruderezh";
+
+/* Button to add a specified shortcut option to Siri. */
+"Siri.addTo" = "Ouzhpennañ da Siri";
+
+/* Label for button to edit the Siri phrase or delete the Siri functionality. */
+"Siri.editOpenUrl" = "Adenrollañ pe dilemel ar verradenn";
+
+/* Title of option in settings to set up Siri to erase */
+"Siri.erase" = "Dilemel";
+
+/* Title of option in settings to set up Siri to erase and then open the app. */
+"Siri.eraseAndOpen" = "Dilemel ha digeriñ";
+
+/* Title for screen to add a favorite URL to Siri. */
+"Siri.favoriteUrl" = "Digeriñ al lec'hienn karetañ";
+
+/* Title of option in settings to set up Siri to open a specified URL in Focus/Klar. */
+"Siri.openURL" = "Digeriñ al lec'hienn karetañ";
+
+/* Label for input to set a favorite URL to be opened by Siri. */
+"Siri.urlToOpen" = "URL da zigeriñ";
+
+/* Label displayed for button used as a shortcut to add a link to the list of URLs to autocomplete. */
+"URL.addToAutocompleteLabel" = "Ouzhpennañ un ere d'al leuniadur emgefreek";
 
 /* Label for cancel button shown when entering a URL or search */
 "URL.cancelLabel" = "Nullañ";
@@ -373,6 +475,9 @@
 /* Label displayed for find in page button when typing in the URL Bar. %@ is any text the user has typed into the URL bar that they want to find on the current page. */
 "URL.findOnPageLabel" = "Kavout er bajennad: %@";
 
+/* Text for a menu displayed from the bottom of the screen when a user long presses on the URL bar with clipboard contents. */
+"URL.paste" = "Pegañ";
+
 /* Placeholder text shown in the URL bar before the user navigates to a page */
 "URL.placeholderText" = "Klask pe chomlec'h";
 
@@ -385,6 +490,9 @@
 /* Title for action sheet item to open the current page in another application. Placeholder is the name of the application to open the current page. */
 "actionSheet.openIn" = "Digeriñ e %@";
 
+/* Toast displayed after a URL has been copied to the clipboard */
+"browser.copyAddressToast" = "URL eilet er golver";
+
 /* Label to display in the Discoverability overlay for keyboard shortcuts */
 "browserShortcutDescription.selectLocationBar" = "Diuzañ ar varrenn lec'hiadur";
 
@@ -396,6 +504,9 @@
 
 /* Text for the context menu when a user wants to copy a link after long pressing it. */
 "contextMenu.copyLink" = "Eilañ an ere";
+
+/* Text for the context menu when a user has a link on their clipboard. */
+"contextMenu.linkCopied" = "Ere eilet ganeoc'h:";
 
 /* Text for the context menu when a user wants to save an image after long pressing it. */
 "contextMenu.saveImageTitle" = "Enrollañ ar skeudenn";
@@ -421,6 +532,9 @@
 /* Text for a share button */
 "share" = "Rannañ";
 
+/* Text for the share menu when a user wants to copy a URL. */
+"shareMenu.copyAddress" = "Eilañ ar chomlec'h";
+
 /* %@ is app name. Prompt shown to ask the user to use Touch ID to continue browsing after returning to the app. */
 "touchId.reason" = "Implijit Touch ID evit distreiñ da %@";
 
@@ -435,6 +549,12 @@
 
 /* text showing the tracking protection is disabled. */
 "trackingProtection.disabledLabel" = "Diweredekaet eo ar gware heuliañ";
+
+/* Title for the tracking settings page to change what trackers are blocked. */
+"trackingProtection.label" = "Gwarez heuliañ";
+
+/* Description/subtitle for the tracking protection label. */
+"trackingProtection.labelDescription" = "Diweredekaat an dra-se a c'hallfe diskoulmañ kudennoù 'zo el lec'hienn";
 
 /* Text for the button to learn more about Tracking Protection. */
 "trackingProtection.learnMore" = "Gouzout hiroc'h";

@@ -1,5 +1,7 @@
 [![codecov](https://codecov.io/gh/mozilla-mobile/focus/branch/master/graph/badge.svg)](https://codecov.io/gh/mozilla-mobile/focus)
 
+⚠️ **Development of this project is not currently a high priority. Because of this, we cannot guarantee timely reviews or interactions on this repository. If you would like to contribute to one of our other iOS projects, we recommend checking out [Firefox iOS](https://github.com/mozilla-mobile/firefox-ios). We greatly appreciate your interest in and contributions towards Focus and look forward to working with you on other projects!**
+
 # Firefox Focus for iOS
 
 _Browse like no one’s watching. The new Firefox Focus automatically blocks a wide range of online trackers — from the moment you launch it to the second you leave it. Easily erase your history, passwords and cookies, so you won’t get followed by things like unwanted ads._
@@ -33,23 +35,19 @@ Build Instructions for Master
 
 1. Install the latest [Xcode developer tools](https://developer.apple.com/xcode/downloads/) from Apple.
 2. Install [Carthage](https://github.com/Carthage/Carthage#installing-carthage).
-3. Clone the repository:
+3. Install [SwiftLint](https://github.com/realm/SwiftLint).
+4. Clone the repository:
 
   ```shell
   https://github.com/mozilla-mobile/focus-ios.git
   ```
 
-4. Pull in the project dependencies:
+5. Pull in the project dependencies:
 
   ```shell
   cd focus-ios
   ./checkout.sh
   ```
 
-5. Open `Blockzilla.xcodeproj` in Xcode.
-6. Build the `Focus` scheme in Xcode.
-
-Upcoming Release (Version 8.0)
-------------------
-
-Features planned for the next release can be found in the [V8.0 milestone](https://github.com/mozilla-mobile/focus-ios/milestone/29). 
+6. Open `Blockzilla.xcodeproj` in Xcode.
+7. Build the `Focus` scheme in Xcode.

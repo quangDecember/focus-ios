@@ -8,6 +8,7 @@ class UserAgent {
     static let shared = UserAgent()
 
     private var userDefaults: UserDefaults
+    private var isDesktopMode: Bool!
 
     var browserUserAgent: String?
 
@@ -17,6 +18,7 @@ class UserAgent {
     }
 
     func setup() {
+        isDesktopMode = false
         if let cachedUserAgent = cachedUserAgent() {
             setUserAgent(userAgent: cachedUserAgent)
             return
@@ -43,9 +45,9 @@ class UserAgent {
         let lastFocusBuild = userDefaults.string(forKey: "LastFocusBuildNumber")
 
         if let focusUA = userDefaults.string(forKey: "UserAgent") {
-            if (lastiOSVersion == currentiOSVersion
+            if lastiOSVersion == currentiOSVersion
                 && lastFocusVersion == currentFocusVersion
-                && lastFocusBuild == currentFocusBuild) {
+                && lastFocusBuild == currentFocusBuild {
                 return focusUA
             }
         }
@@ -78,21 +80,33 @@ class UserAgent {
         }
 
         let mutableUA = NSMutableString(string: userAgent)
-        mutableUA.insert("FocusiOS/\(AppInfo.shortVersion) ", at: mobileRange.location)
+        mutableUA.insert("FxiOS/\(AppInfo.shortVersion) ", at: mobileRange.location)
 
         let focusUA = "\(mutableUA) Safari/\(webKitVersion)"
 
         return focusUA
     }
-    
+
     public static func getDesktopUserAgent() -> String {
-        // TODO: check if this is suffficient. Chose this user agent instead of Firefox's method as Firefox fails to load desktop on several sites (i.e. Facebook)
         let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/605.1.12 (KHTML, like Gecko) Version/11.1 Safari/605.1.12"
         return String(userAgent)
     }
 
+    public func getUserAgent() -> String? {
+        let userAgent = isDesktopMode ? UserAgent.getDesktopUserAgent() : userDefaults.string(forKey: "UserAgent")
+        return userAgent
+    }
+
     private func setUserAgent(userAgent: String) {
         userDefaults.register(defaults: ["UserAgent": userAgent])
-        userDefaults.synchronize()
+    }
+
+    public func changeUserAgent() {
+        if isDesktopMode {
+            setup()
+        } else {
+            setUserAgent(userAgent: UserAgent.getDesktopUserAgent())
+            isDesktopMode = true
+        }
     }
 }

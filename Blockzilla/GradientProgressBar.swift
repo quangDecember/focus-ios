@@ -20,13 +20,13 @@ open class GradientProgressBar: UIProgressView {
         static let backgroundColor = UIColor.clear
 
         static let gradientColors = [
-            UIColor(rgb: 0xFF1AD9).cgColor,
-            UIColor(rgb: 0x9400FF).cgColor,
-            UIColor(rgb: 0xFF1AD9).cgColor,
-            UIColor(rgb: 0x9400FF).cgColor,
-            UIColor(rgb: 0xFF1AD9).cgColor,
-            UIColor(rgb: 0x9400FF).cgColor,
-            UIColor(rgb: 0xFF1AD9).cgColor
+            UIConstants.Photon.Magenta50.cgColor,
+            UIConstants.Photon.Purple50.cgColor,
+            UIConstants.Photon.Magenta50.cgColor,
+            UIConstants.Photon.Purple50.cgColor,
+            UIConstants.Photon.Magenta50.cgColor,
+            UIConstants.Photon.Purple50.cgColor,
+            UIConstants.Photon.Magenta50.cgColor
         ]
 
         static let animationDuration = 0.2 // CALayer default animation duration
@@ -107,8 +107,8 @@ open class GradientProgressBar: UIProgressView {
         gradientLayer.frame = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width * 2, height: bounds.size.height)
         gradientLayer.colors = DefaultValues.gradientColors
         gradientLayer.locations = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.0]
-        gradientLayer.startPoint = CGPoint(x:0, y:0)
-        gradientLayer.endPoint = CGPoint(x:1, y:0)
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
         gradientLayer.drawsAsynchronously = true
     }
 
@@ -124,7 +124,6 @@ open class GradientProgressBar: UIProgressView {
         moveAnimation.toValue = CGPoint(x: gradientLayer.frame.width, y: gradientLayer.position.y)
         moveAnimation.fillMode = .forwards
         moveAnimation.isRemovedOnCompletion = false
-
 
         CATransaction.setCompletionBlock {
             self.resetProgressBar()

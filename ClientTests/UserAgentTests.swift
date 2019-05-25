@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-
 import XCTest
 
 #if FOCUS
@@ -28,7 +27,6 @@ class UserAgentTests: XCTestCase {
         mockUserDefaults.set(fakeUserAgent, forKey: "UserAgent")
 
         _ = UserAgent(userDefaults: mockUserDefaults)
-        XCTAssertTrue(mockUserDefaults.synchronizeCalled)
         XCTAssertNotNil(mockUserDefaults.registerValue)
         XCTAssertEqual(mockUserDefaults.registerValue!["UserAgent"] as? String, fakeUserAgent)
     }
@@ -40,10 +38,9 @@ class UserAgentTests: XCTestCase {
         mockUserDefaults.removeObject(forKey: "UserAgent")
 
         _ = UserAgent(userDefaults: mockUserDefaults)
-        XCTAssertTrue(mockUserDefaults.synchronizeCalled)
         XCTAssertNotNil(mockUserDefaults.registerValue)
         XCTAssertNotNil(mockUserDefaults.string(forKey: "LastFocusVersionNumber"))
-        XCTAssertTrue(((mockUserDefaults.registerValue!["UserAgent"] as? String)?.contains(AppInfo.config.productName))!)
+        XCTAssertTrue(((mockUserDefaults.registerValue!["UserAgent"] as? String)?.contains("FxiOS"))!)
     }
 
     func testGetDesktopUserAgent() {
@@ -51,25 +48,18 @@ class UserAgentTests: XCTestCase {
     }
 }
 
-fileprivate class MockUserDefaults: UserDefaults {
-    var synchronizeCalled = false
-    var registerValue: [String : Any]?
+private class MockUserDefaults: UserDefaults {
+    var registerValue: [String: Any]?
 
     func clear() {
         removeObject(forKey: "LastFocusVersionNumber")
         removeObject(forKey: "LastFocusBuildNumber")
         removeObject(forKey: "LastDeviceSystemVersionNumber")
         removeObject(forKey: "UserAgent")
-        synchronizeCalled = false
         registerValue = nil
     }
 
-    override func synchronize() -> Bool {
-        synchronizeCalled = true
-        return true
-    }
-
-    override func register(defaults registrationDictionary: [String : Any]) {
+    override func register(defaults registrationDictionary: [String: Any]) {
         registerValue = registrationDictionary
     }
 }

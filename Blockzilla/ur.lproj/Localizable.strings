@@ -79,17 +79,32 @@
 /* label describing URL Autocomplete as disabled */
 "Autocomplete.disabled" = "نااہل";
 
+/* Label for toast alerting that the custom URL being added is a duplicate */
+"Autocomplete.duplicateUrl" = "URLپہلے ہی موجود ہے";
+
 /* Label for button to add a custom URL */
 "Autocomplete.emptyState" = "دکھانے کے لیے کوئی مخصوص URLs نہیں";
 
 /* label describing URL Autocomplete as enabled */
 "Autocomplete.enabled" = "اہل";
 
+/* Label for button taking you to your custom Autocomplete URL list */
+"Autocomplete.manageSites" = "سائٹس بندرست کریں";
+
+/* Label for enabling or disabling autocomplete */
+"Autocomplete.mySites" = "میری سائٹ";
+
+/* Label for enabling or disabling top sites */
+"Autocomplete.topSites" = "بہترین سائٹیں";
+
 /* Create a new session after failing a biometric check */
 "BiometricPrompt.newSession" = "نیا سیشن";
 
 /* Accessibility label for the back button */
 "Browser.backLabel" = "واپس";
+
+/* Copy URL button in URL long press menu */
+"Browser.copyAddressLabel" = "پتہ نقل کریں";
 
 /* Copy URL button in URL long press menu */
 "Browser.copyMenuLabel" = "نقل کریں";
@@ -181,6 +196,9 @@
 /* Second label for product description on the home screen */
 "Home.descriptionLabel2" = "براؤز کریں ۔ مٹائیں ۔ دہرائیں۔";
 
+/* Button label used to close a menu that displays as a popup. */
+"Menu.Close" = "بند کریں";
+
 /* Label in share alert to cancel the alert */
 "Open.Cancel" = "منسوخ کریں";
 
@@ -210,6 +228,15 @@
 
 /* Save button label */
 "Save" = "محفوظ کریں";
+
+/* Label for disable option on search suggestions prompt */
+"SearchSuggestions.promptDisable" = "نہیں";
+
+/* Label for enable option on search suggestions prompt */
+"SearchSuggestions.promptEnable" = "ہاں";
+
+/* Title for search suggestions prompt */
+"SearchSuggestions.promptTitle" = "تلاش تجاویز دکھائیں؟";
 
 /* Text for button to add another search engine in settings */
 "Settings.Search.AddSearchEngineButton" = "ایک اور تلاش انجن کا اضافہ کریں";
@@ -259,11 +286,17 @@
 /* %@ is the name of the app (Focus / Klar). Title displayed in the settings screen that, when tapped, allows the user to leave a review for the app on the app store. */
 "Settings.rate" = "%@ کی شرح";
 
+/* Label for Safari integration section */
+"Settings.safariTitle" = "SAFARI INTEGRATION";
+
 /* Title for settings screen */
 "Settings.screenTitle" = "سیٹنگیں";
 
 /* Label for the search engine in the search screen */
 "Settings.searchLabel" = "تلاش انجن";
+
+/* Label for the Search Suggestions toggle row */
+"Settings.searchSuggestions" = "تلاش تجاویز حاصل کریں";
 
 /* Title for the search selection screen */
 "Settings.searchTitle2" = "SEARCH";
@@ -307,6 +340,9 @@
 /* Label for toggle on main screen */
 "Settings.toggleBlockSocial" = "سماجی ٹریکرس بلاک کریں";
 
+/* Show home screen tips toggle label on settings screen */
+"Settings.toggleHomeScreenTips" = "ابتدائی صفحہ کی تجاویز دکھائیں";
+
 /* Label subtitle for toggle on main screen */
 "Settings.toggleOtherSubtitle" = "شاید کچھ وڈیوز اور ویب صفحات کو توڑ دے";
 
@@ -319,6 +355,9 @@
 /* Title for What's new screen */
 "Settings.whatsNewTitle" = "نیا کیا ہے";
 
+/* Title for settings section to enable different Siri Shortcuts. */
+"Settinsg.siriShortcutsTitle" = "SIRI SHORTCUTS";
+
 /* Text for the share menu option when a user wants to open the find in page menu */
 "ShareMenu.FindInPage" = "صفحے میں ڈھونڈیں";
 
@@ -328,8 +367,41 @@
 /* Text for the share menu option when a user wants to open a page in Focus. */
 "ShareMenu.OpenInFocus" = "%@ میں کھولیں";
 
+/* Title for the share menu where users can take actions for the current website they are on. */
+"ShareMenu.PageActions" = "صفحہ اعمال";
+
 /* Text for the share menu option when a user wants to reload the site as a desktop */
 "ShareMenu.RequestDesktop" = "ڈیسک ٹاپ سائٹ کی درخواست کریں";
+
+/* Text for the share menu option when a user wants to open the current website in the Chrome app. */
+"ShareMenu.ShareOpenChrome" = "Chrome میں کھولیں";
+
+/* Text for the share menu option when a user wants to open the current website in the Firefox app. */
+"ShareMenu.ShareOpenFirefox" = "Firefox میں کھولیں";
+
+/* Text for the share menu option when a user wants to open the current website in the Safari app. */
+"ShareMenu.ShareOpenSafari" = "Safari میں کھولیں";
+
+/* Text for the share menu option when a user wants to share the current website they are on through another app. */
+"ShareMenu.SharePage" = "…کے ساتھ صفحہ شیئر کریں";
+
+/* Button to add a favorite URL to Siri. */
+"Siri.add" = "اضافہ کریں";
+
+/* Button to add a specified shortcut option to Siri. */
+"Siri.addTo" = "Siri میں شامل کریں";
+
+/* Title of option in settings to set up Siri to erase */
+"Siri.erase" = "مٹائيں";
+
+/* Title of option in settings to set up Siri to erase and then open the app. */
+"Siri.eraseAndOpen" = "مٹائیں اور کھولیں";
+
+/* Title for screen to add a favorite URL to Siri. */
+"Siri.favoriteUrl" = "پسندیدہ سائٹ کھولیں";
+
+/* Title of option in settings to set up Siri to open a specified URL in Focus/Klar. */
+"Siri.openURL" = "پسندیدہ سائٹ کھولیں";
 
 /* Label for cancel button shown when entering a URL or search */
 "URL.cancelLabel" = "منسوخ کریں";
@@ -346,6 +418,9 @@
 /* Label displayed for find in page button when typing in the URL Bar. %@ is any text the user has typed into the URL bar that they want to find on the current page. */
 "URL.findOnPageLabel" = "صفحہ میں ڈھونڈیں: %@";
 
+/* Text for a menu displayed from the bottom of the screen when a user long presses on the URL bar with clipboard contents. */
+"URL.paste" = "چسپاں کریں";
+
 /* Placeholder text shown in the URL bar before the user navigates to a page */
 "URL.placeholderText" = "پتہ تلاش یا داخل کریں";
 
@@ -358,6 +433,9 @@
 /* Title for action sheet item to open the current page in another application. Placeholder is the name of the application to open the current page. */
 "actionSheet.openIn" = "%@ میں کھولیں";
 
+/* Toast displayed after a URL has been copied to the clipboard */
+"browser.copyAddressToast" = "URL تختہ تراشہ پر نقل ہو گیا";
+
 /* Label to display in the Discoverability overlay for keyboard shortcuts */
 "browserShortcutDescription.selectLocationBar" = "محل وقتوع بار کا انتخاب کریں";
 
@@ -369,6 +447,9 @@
 
 /* Text for the context menu when a user wants to copy a link after long pressing it. */
 "contextMenu.copyLink" = "ربط نقل کریں";
+
+/* Text for the context menu when a user has a link on their clipboard. */
+"contextMenu.linkCopied" = "جو ربط آپ نے نقل کیا:";
 
 /* Text for the context menu when a user wants to save an image after long pressing it. */
 "contextMenu.saveImageTitle" = "نقش محفوظ کریں";
@@ -394,6 +475,9 @@
 /* Text for a share button */
 "share" = "شیئر کریں";
 
+/* Text for the share menu when a user wants to copy a URL. */
+"shareMenu.copyAddress" = "پتہ نقل کریں";
+
 /* Label for ad trackers. */
 "trackingProtection.adTrackersLabel" = "اشتھاری ٹریکرز";
 
@@ -405,6 +489,9 @@
 
 /* text showing the tracking protection is disabled. */
 "trackingProtection.disabledLabel" = "سراغ کاری حفاظت بند";
+
+/* Title for the tracking settings page to change what trackers are blocked. */
+"trackingProtection.label" = "سراغ راہ حفاظت";
 
 /* Text for the button to learn more about Tracking Protection. */
 "trackingProtection.learnMore" = "مزید سیکھیں";

@@ -88,11 +88,26 @@
 /* label describing URL Autocomplete as disabled */
 "Autocomplete.disabled" = "Devre dışı";
 
+/* Label for toast alerting that the custom URL being added is a duplicate */
+"Autocomplete.duplicateUrl" = "Adres zaten mevcut";
+
 /* Label for button to add a custom URL */
 "Autocomplete.emptyState" = "Görüntülenecek hiç özel adres yok";
 
 /* label describing URL Autocomplete as enabled */
 "Autocomplete.enabled" = "Etkin";
+
+/* Label for button taking you to your custom Autocomplete URL list */
+"Autocomplete.manageSites" = "Siteleri yönet";
+
+/* Label for enabling or disabling autocomplete */
+"Autocomplete.mySites" = "Sitelerim";
+
+/* Description for adding and managing custom autocomplete URLs. The placeholder is replaced with the application name, which can be either Firefox Focus or Firefox Klar. */
+"Autocomplete.mySitesDesc" = "%@’un sık kullandığınız adresleri otomatik tamamlaması için etkinleştirin.";
+
+/* Label for enabling or disabling top sites */
+"Autocomplete.topSites" = "Sık kullanılanlar";
 
 /* Create a new session after failing a biometric check */
 "BiometricPrompt.newSession" = "Yeni oturum";
@@ -232,6 +247,18 @@
 /* Label for error state when entering an invalid search engine URL. %s is a search term in a URL. */
 "SearchEngine.addEngineError" = "Olmadı. Arama teriminin yerine şunu yazmayı deneyin: %s.";
 
+/* Label for disable option on search suggestions prompt */
+"SearchSuggestions.promptDisable" = "Hayır";
+
+/* Label for enable option on search suggestions prompt */
+"SearchSuggestions.promptEnable" = "Evet";
+
+/* %@ is the name of the app (Focus / Klar). Label for search suggestions prompt message */
+"SearchSuggestions.promptMessage" = "Arama önerileri alabilmeniz için %@’un adres çubuğuna yazdığınız şeyleri seçtiğiniz arama motoruna göndermesi gerekir.";
+
+/* Title for search suggestions prompt */
+"SearchSuggestions.promptTitle" = "Arama önerileri gösterilsin mi?";
+
 /* Text for button to add another search engine in settings */
 "Settings.Search.AddSearchEngineButton" = "Başka bir arama motoru ekle";
 
@@ -274,6 +301,9 @@
 /* Button label for accepting Content blocker alert */
 "Settings.blockOtherYes" = "Anladım";
 
+/* Description associated to the Search Suggestions toggle on main screen. %@ is the app name (Focus/Klar) */
+"Settings.detailTextSearchSuggestion" = "%@, adres çubuğuna yazdıklarını arama motorunuza gönderecektir.";
+
 /* Description associated to the Send Usage Data toggle on main screen. %@ is the app name (Focus/Klar) */
 "Settings.detailTextSendUsageData" = "Mozilla, yalnızca %@’u daha da geliştirmek için ihtiyaç duyduğumuz verileri toplar.";
 
@@ -291,6 +321,9 @@
 
 /* Label for the search engine in the search screen */
 "Settings.searchLabel" = "Arama motoru";
+
+/* Label for the Search Suggestions toggle row */
+"Settings.searchSuggestions" = "Arama önerilerini göster";
 
 /* Title for the search selection screen */
 "Settings.searchTitle2" = "ARAMA";
@@ -343,6 +376,9 @@
 /* %@ is the name of the app (Focus / Klar). Description for 'Enable Face ID' displayed under its respective toggle in the settings menu. */
 "Settings.toggleFaceIDDescription" = "%@’ta açık bir adres varsa Face ID, uygulamanın kilidini açabilir";
 
+/* Show home screen tips toggle label on settings screen */
+"Settings.toggleHomeScreenTips" = "Ana ekranda ipuçlarını göster";
+
 /* Label subtitle for toggle on main screen */
 "Settings.toggleOtherSubtitle" = "Bazı videolar ve web sayfaları bozulabilir";
 
@@ -358,11 +394,14 @@
 /* %@ is the name of the app (Focus / Klar). Description for 'Enable Touch ID' displayed under its respective toggle in the settings menu. */
 "Settings.toggleTouchIDDescription" = "%@’ta açık bir adres varsa Touch ID, uygulamanın kilidini açabilir";
 
+/* URL for the learn more of the send usage data toggle */
+"Settings.usageData" = "usage-data";
+
 /* Title for What's new screen */
 "Settings.whatsNewTitle" = "Yeni neler var?";
 
 /* Title for settings section to enable different Siri Shortcuts. */
-"Settinsg.siriShortcutsTitle" = "SIRI KISAYOLLARI";
+"Settinsg.siriShortcutsTitle" = "SIRI KESTİRMELERİ";
 
 /* Text for the share menu option when a user wants to open the find in page menu */
 "ShareMenu.FindInPage" = "Sayfada Bul";
@@ -379,26 +418,29 @@
 /* Text for the share menu option when a user wants to reload the site as a desktop */
 "ShareMenu.RequestDesktop" = "Masaüstü sitesini iste";
 
+/* Text for the share menu option when a user wants to reload the site as a mobile device */
+"ShareMenu.RequestMobile" = "Mobil siteyi iste";
+
 /* Text for the share menu option when a user wants to open the current website in the Chrome app. */
-"ShareMenu.ShareOpenChrome" = "Chrome’da Aç";
+"ShareMenu.ShareOpenChrome" = "Chrome’da aç";
 
 /* Text for the share menu option when a user wants to open the current website in the Firefox app. */
-"ShareMenu.ShareOpenFirefox" = "Firefox’ta Aç";
+"ShareMenu.ShareOpenFirefox" = "Firefox’ta aç";
 
 /* Text for the share menu option when a user wants to open the current website in the Safari app. */
-"ShareMenu.ShareOpenSafari" = "Safari’de Aç";
+"ShareMenu.ShareOpenSafari" = "Safari’de aç";
 
 /* Text for the share menu option when a user wants to share the current website they are on through another app. */
-"ShareMenu.SharePage" = "Sayfayı Paylaş...";
+"ShareMenu.SharePage" = "Sayfayı paylaş...";
 
 /* Button to add a favorite URL to Siri. */
-"Siri.add" = "Add";
+"Siri.add" = "Ekle";
 
 /* Button to add a specified shortcut option to Siri. */
-"Siri.addTo" = "Siri’ye Ekle";
+"Siri.addTo" = "Siri’ye ekle";
 
 /* Label for button to edit the Siri phrase or delete the Siri functionality. */
-"Siri.editOpenUrl" = "Yeniden kaydet veya kısayolu sil";
+"Siri.editOpenUrl" = "Yeniden kaydet veya kestirmeyi sil";
 
 /* Title of option in settings to set up Siri to erase */
 "Siri.erase" = "Sil";
@@ -414,6 +456,9 @@
 
 /* Label for input to set a favorite URL to be opened by Siri. */
 "Siri.urlToOpen" = "Açılacak adres";
+
+/* Label displayed for button used as a shortcut to add a link to the list of URLs to autocomplete. */
+"URL.addToAutocompleteLabel" = "Bağlantıyı otomatik tamamlamaya ekle";
 
 /* Label for cancel button shown when entering a URL or search */
 "URL.cancelLabel" = "İptal";
@@ -507,6 +552,9 @@
 
 /* Title for the tracking settings page to change what trackers are blocked. */
 "trackingProtection.label" = "İzlenme Koruması";
+
+/* Description/subtitle for the tracking protection label. */
+"trackingProtection.labelDescription" = "Bunu kapatmak bazı site sorunlarını düzeltebilir";
 
 /* Text for the button to learn more about Tracking Protection. */
 "trackingProtection.learnMore" = "Daha fazla bilgi al";
